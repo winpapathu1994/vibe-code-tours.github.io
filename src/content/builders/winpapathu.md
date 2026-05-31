@@ -6,8 +6,7 @@ role: builder
 skills: ["JavaScript", "PHP", "React"]
 x: winpapathu1994
 linkedin: Win Pa Pa Thu
-
+GitHub: @winpapathu1994
 ---
 
-Hi! I'm learning to vibe-code with AI. My goal is to build and ship something
-real by Demo Day. Excited to be part of the Tour.
+I'm currently learning how to vibe-code with AI and exploring agentic development workflows to build software faster and more effectively.
