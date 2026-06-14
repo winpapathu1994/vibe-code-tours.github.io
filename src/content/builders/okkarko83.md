@@ -1,13 +1,12 @@
 ---
-name: Your Name
-github: githubusername
+name: Okkar Ko
+github: okkarko83
 cohort: 1
 role: builder
-skills: ["JavaScript", "Python", "Java", "Claude Code"]
+skills: ["Kubernetes", "GitOps", "Terraform", "AWS"]
 ---
 
-Hi! I'm learning to vibe-code with AI. My goal is to build and ship something
-real by Demo Day. Excited to be part of the Tour.
+I am a Senior Platform Engineer / DevOps Specialist with over 15 years of experience designing, building, and scaling resilient cloud infrastructure. I specialize in cloud-native technologies, automation, and fostering strong DevOps cultures to bridge the gap between development and operations.
 
 <!--
 HOW TO ADD YOURSELF

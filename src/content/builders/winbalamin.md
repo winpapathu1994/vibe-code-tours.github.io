@@ -1,6 +1,6 @@
 ---
-name: Your Name
-github: githubusername
+name: Win Bala Min
+github: winbalamin
 cohort: 1
 role: builder
 skills: ["JavaScript", "Python", "Java", "Claude Code"]
@@ -30,7 +30,6 @@ HOW TO ADD YOURSELF
        claude_101:      293x3v9qydhx
        claude_code_101: https://verify.skilljar.com/c/sbdx5cwzjhec
    Earned certs light up as colored stars on your card (grey = not yet).
-   ⚠ Cert ids go UNDER `certs:` (indented). At the top level they're ignored.
      skills:   ["Python", "React", "MCP"]
      repo:     https://github.com/<you>/<your-project>
      x:        your-x-handle            (handle or full URL)

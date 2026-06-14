@@ -115,6 +115,38 @@ export function normalizeCerts(raw) {
   return Object.keys(out).length ? out : undefined;
 }
 
+// Progression ladder: every earned cert (amber) PLUS the next `lookahead`
+// not-yet-earned catalog certs (grey, inactive) as upcoming targets.
+// 0 earned -> first 2 catalog certs grey. N earned -> earned + next 2 grey.
+// Combined and sorted by catalog order so it reads as one continuous path.
+export function certProgressList(certs, lookahead = 2) {
+  const earned = certs && typeof certs === "object" ? certs : {};
+  const byOrder = (a, b) => certMeta(a).order - certMeta(b).order;
+  const catalog = Object.keys(CERT_CATALOG).sort(byOrder);
+
+  const earnedCatalog = catalog.filter((id) => earned[id]);
+  const earnedExtras = Object.keys(earned).filter((id) => !CERT_CATALOG[id]);
+  const nextGrey = catalog.filter((id) => !earned[id]).slice(0, lookahead);
+
+  const showIds = [
+    ...new Set([...earnedCatalog, ...earnedExtras, ...nextGrey]),
+  ].sort(byOrder);
+  return showIds.map((id) => {
+    const meta = certMeta(id);
+    const code = earned[id];
+    return {
+      id,
+      label: meta.label,
+      level: meta.level,
+      earned: !!code,
+      code: code || null,
+      color: code ? CERT_AMBER : CERT_GREY,
+      url: code ? skilljarUrl(code) : null,
+      icon: certIcon(id),
+    };
+  });
+}
+
 // Ordered display list: core certs first (earned or grey), then any extra earned.
 // Returns [{ id, label, level, color, code, url, earned }].
 export function certDisplayList(certs) {
